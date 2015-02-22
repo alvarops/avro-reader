@@ -28,7 +28,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>ie.alvarops.github.avroreader.Main</mainClass>
+              <mainClass>ie.alvarops.github.avroreader.AvroReaderMain</mainClass>
             </manifest>
           </archive>
           <descriptorRefs>
