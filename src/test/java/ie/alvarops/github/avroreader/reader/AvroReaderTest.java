@@ -22,12 +22,14 @@ import org.mockito.Mock;
 public class AvroReaderTest extends BaseTest {
   @Mock
   private AvroFileReader avroFileReaderMock;
+  private DataFileReaderFactory dataFileReaderFactory;
   private AvroReader avroReader;
 
   @Before
   public void initialiseAvroReader() throws IOException {
     when(avroFileReaderMock.getSeekableFileInput()).thenReturn(generateAvroData());
-    this.avroReader = new AvroReader(SCHEMA, avroFileReaderMock);
+    dataFileReaderFactory = new DataFileReaderFactory(avroFileReaderMock);
+    this.avroReader = new AvroReader(SCHEMA, dataFileReaderFactory);
   }
 
   @Test
